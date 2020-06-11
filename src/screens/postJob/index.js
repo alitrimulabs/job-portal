@@ -20,10 +20,7 @@ const PostJob = () => {
 
   const navigation = useNavigation();
 
-  const [postJobQuery, {loading, data, error}] = useMutation(POST_JOB);
-
-  console.log(error);
-  console.log(loading);
+  const [postJobQuery, {loading, data}] = useMutation(POST_JOB);
 
   useEffect(() => {
     if (data && !loading) {
@@ -78,7 +75,6 @@ const PostJob = () => {
                     },
                   },
                 });
-                console.log('press');
               }}
             />
           </View>
