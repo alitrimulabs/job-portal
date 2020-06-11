@@ -1,37 +1,23 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import { graphql } from 'graphql';
+import {View, Text, TouchableOpacity} from 'react-native';
 
-interface JobCardProps{
-    title: string;
-    postedAt: string;
+import styles from './styles';
+
+interface JobCardProps {
+  title: string;
+  date: string;
+  job: string;
+  companySlug: string;
+  onSelect: Function;
 }
 
-const JobCard = ({ title, postedAt }: JobCardProps) => (
+const JobCard = ({title, date, job, companySlug, onSelect}: JobCardProps) => (
   <View style={styles.content}>
-    <TouchableOpacity>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.source}>posted at: {postedAt}</Text>
+    <TouchableOpacity onPress={() => onSelect(job, companySlug)}>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.source}>posted at: {date}</Text>
     </TouchableOpacity>
   </View>
-)
-
-const styles = StyleSheet.create({
-  content: {
-    margin: 10,
-    flex: 1
-  },
-  source: {
-    color: '#3d3c41',
-    fontSize: 14,
-    fontWeight: '500',
-    marginBottom: 3
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 5
-  }
-})
+);
 
 export default JobCard;

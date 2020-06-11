@@ -1,13 +1,8 @@
-import {ApolloClient} from 'apollo-client';
-import {InMemoryCache} from "apollo-cache-inmemory";
-import {RestLink} from "apollo-link-rest";
-import {HttpLink} from "apollo-link-http";
+import ApolloClient, {InMemoryCache} from 'apollo-boost';
 
-const restLink = new HttpLink({
-    uri: 'https://api.graphql.jobs/',
-})
+const memoryCache = new InMemoryCache();
 
 export const client = new ApolloClient({
-    link: restLink,
-    cache: new InMemoryCache(),
-})
+  uri: 'https://api.graphql.jobs/',
+  cache: memoryCache,
+});

@@ -1,22 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  ActivityIndicator,
-  FlatList,
-} from 'react-native';
+import React from 'react';
+import {ApolloProvider} from '@apollo/react-hooks';
 
 import {client} from './src/graphql/Client';
-import {Jobs} from './src/graphql/Quries';
-import JobCard from './src/components/job-card';
-import Home from './src/screens/home';
+import AppNavigator from './src/navigation/AppNavigator';
 
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <ApolloProvider client={client}>
+      <>
+        <AppNavigator />
+      </>
+    </ApolloProvider>
   );
 }
 
