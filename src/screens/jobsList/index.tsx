@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, ActivityIndicator, FlatList, Button} from 'react-native';
 import {useQuery} from '@apollo/react-hooks';
+import moment from 'moment';
 
 import styles from './styles';
 import {Get_All_Jobs} from '../../graphql/Quries';
@@ -24,7 +25,7 @@ function JobsList() {
     return (
       <JobCard
         title={title}
-        date={postedAt}
+        date={moment(postedAt).format('L')}
         job={slug}
         companySlug={company.slug}
         onSelect={openDetail}

@@ -3,6 +3,8 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   content: {
     margin: 10,
+    padding: 10,
+    borderBottomWidth: 2,
     flex: 1,
   },
   source: {

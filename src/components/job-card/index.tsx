@@ -14,7 +14,9 @@ interface JobCardProps {
 const JobCard = ({title, date, job, companySlug, onSelect}: JobCardProps) => (
   <View style={styles.content}>
     <TouchableOpacity onPress={() => onSelect(job, companySlug)}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title} numberOfLines={1}>
+        {title}
+      </Text>
       <Text style={styles.source}>posted at: {date}</Text>
     </TouchableOpacity>
   </View>
