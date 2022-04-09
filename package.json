@@ -18,7 +18,7 @@
     "@types/react-native": "^0.62.13",
     "apollo-boost": "^0.4.9",
     "graphql": "^15.1.0",
-    "moment": "^2.26.0",
+    "moment": "^2.29.2",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-gesture-handler": "^1.6.1",
